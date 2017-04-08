@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "902880343680",
+    "project_id": "navigateapp-38ceb"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902880343680:android:55c2041ec0f53bf9",
+        "android_client_info": {
+          "package_name": "com.maciekbro.navigateapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902880343680-82g4uq27memf7m5rh3iad4e6noaqdi2l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maciekbro.navigateapp",
+            "certificate_hash": "e1bdd8adbb0ed6750b1a9a79a523314f774396b9"
+          }
+        },
+        {
+          "client_id": "902880343680-nurdb94c77bnr8coc8i8kk44qc6nm83s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUD4-2GUoVLwX1-DEyrxmrrKgat0jTJ2A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

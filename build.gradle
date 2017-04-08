@@ -2,6 +2,7 @@
 
 buildscript {
 
+    ext.google_play_services = '10.2.1'
     ext.daggerVersion = '2.7'
     ext.support_version = '25.3.0'
     ext.retrofitVersion = '2.1.0'
@@ -14,6 +15,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.google.gms:google-services:3.0.0'
+
 
     }
 }
