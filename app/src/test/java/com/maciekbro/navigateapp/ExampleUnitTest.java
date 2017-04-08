@@ -1,4 +1,4 @@
-package com.softwareacademy.searchandnavigate;
+package com.maciekbro.navigateapp;
 
 import org.junit.Test;
 

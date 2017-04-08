@@ -1,9 +1,9 @@
-package com.softwareacademy.searchandnavigate.dagger;
+package com.maciekbro.navigateapp.dagger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.softwareacademy.searchandnavigate.SearchApplication;
+import com.maciekbro.navigateapp.SearchApplication;
 
 import javax.inject.Singleton;
 

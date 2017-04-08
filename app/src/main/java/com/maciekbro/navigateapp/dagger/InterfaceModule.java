@@ -1,7 +1,7 @@
-package com.softwareacademy.searchandnavigate.dagger;
+package com.maciekbro.navigateapp.dagger;
 
-import com.softwareacademy.searchandnavigate.utils.shared_preferences.SharedPreferencesFacade;
-import com.softwareacademy.searchandnavigate.utils.shared_preferences.SharedPreferencesFacadeImpl;
+import com.maciekbro.navigateapp.utils.shared_preferences.SharedPreferencesFacade;
+import com.maciekbro.navigateapp.utils.shared_preferences.SharedPreferencesFacadeImpl;
 
 import javax.inject.Singleton;
 

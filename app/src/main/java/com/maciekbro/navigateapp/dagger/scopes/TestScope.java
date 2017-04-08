@@ -1,4 +1,5 @@
-package com.softwareacademy.searchandnavigate.dagger.scopes;
+
+package com.maciekbro.navigateapp.dagger.scopes;
 
 import java.lang.annotation.Retention;
 
@@ -8,5 +9,4 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Scope
 @Retention(RUNTIME)
-public @interface ActivityScope {
-}
+public @interface TestScope {}

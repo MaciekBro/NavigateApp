@@ -1,9 +1,9 @@
-package com.softwareacademy.searchandnavigate.utils;
+package com.maciekbro.navigateapp.utils;
 
 
 import android.util.Log;
 
-import com.softwareacademy.searchandnavigate.BuildConfig;
+import com.maciekbro.navigateapp.BuildConfig;
 
 
 /**

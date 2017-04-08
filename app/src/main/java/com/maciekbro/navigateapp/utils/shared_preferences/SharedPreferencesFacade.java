@@ -1,4 +1,4 @@
-package com.softwareacademy.searchandnavigate.utils.shared_preferences;
+package com.maciekbro.navigateapp.utils.shared_preferences;
 
 /**
  *

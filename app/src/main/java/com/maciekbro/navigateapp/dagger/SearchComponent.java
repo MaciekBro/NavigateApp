@@ -1,4 +1,4 @@
-package com.softwareacademy.searchandnavigate.dagger;
+package com.maciekbro.navigateapp.dagger;
 
 import javax.inject.Singleton;
 

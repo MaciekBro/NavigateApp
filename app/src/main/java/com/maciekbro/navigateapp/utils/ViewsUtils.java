@@ -1,4 +1,4 @@
-package com.softwareacademy.searchandnavigate.utils;
+package com.maciekbro.navigateapp.utils;
 
 import android.app.Activity;
 import android.view.View;

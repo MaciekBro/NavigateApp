@@ -1,9 +1,9 @@
-package com.softwareacademy.searchandnavigate.login;
+package com.maciekbro.navigateapp.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.softwareacademy.searchandnavigate.R;
+import com.maciekbro.navigateapp.R;
 
 public class LoginActivity extends AppCompatActivity {
 

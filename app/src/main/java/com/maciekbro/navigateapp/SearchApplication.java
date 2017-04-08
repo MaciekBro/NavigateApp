@@ -1,10 +1,10 @@
-package com.softwareacademy.searchandnavigate;
+package com.maciekbro.navigateapp;
 
 import android.app.Application;
 
-import com.softwareacademy.searchandnavigate.dagger.DaggerSearchComponent;
-import com.softwareacademy.searchandnavigate.dagger.MainAppModule;
-import com.softwareacademy.searchandnavigate.dagger.SearchComponent;
+import com.maciekbro.navigateapp.dagger.DaggerSearchComponent;
+import com.maciekbro.navigateapp.dagger.MainAppModule;
+import com.maciekbro.navigateapp.dagger.SearchComponent;
 
 /**
  *
@@ -18,7 +18,7 @@ public class SearchApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        searchComponent = DaggerSearchComponent.builder()
+        searchComponent = DaggerSearchComponent.builder()   //dagger sam dodaje słowo Dagger do wykorzystywanych przez niego zmiennych
                 .mainAppModule(new MainAppModule(this))
                 .build();
     }
