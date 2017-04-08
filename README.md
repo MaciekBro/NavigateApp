@@ -1,0 +1,1 @@
+Projekt na zajęcia z androida pokazujący możliwości niektórych bibliotek GOOGLE PLAY SERVICES
