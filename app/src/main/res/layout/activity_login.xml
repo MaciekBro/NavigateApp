@@ -7,17 +7,20 @@
 
     <ImageView
         android:id="@+id/profile_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
         android:src="@android:drawable/ic_popup_reminder" />
 
     <TextView
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/name_textview"
         android:layout_below="@+id/profile_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <com.google.android.gms.common.SignInButton
@@ -27,5 +30,13 @@
         android:layout_centerInParent="true">
 
     </com.google.android.gms.common.SignInButton>
+    
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/sign_in_button"
+        android:id="@+id/map_button"
+        android:text="Mapy!"
+        android:layout_width="100dp"
+        android:layout_height="60dp" />
 
 </RelativeLayout>

@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.maciekbro.navigateapp.R;
+import com.maciekbro.navigateapp.map.MapsActivity;
 import com.maciekbro.navigateapp.utils.ViewsUtils;
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
@@ -46,8 +47,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             @Override
             public void onClick(View v) {
                 signIn();
+
             }
         });
+
+        findViewById(R.id.map_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void signIn() {
@@ -76,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             GoogleSignInAccount acct = result.getSignInAccount();
             Uri photoUrl = acct.getPhotoUrl();
             TextView name = ViewsUtils.findView(this, R.id.name_textview);
-            name.setText(acct.getDisplayName());
+            name.setText("Witaj " + acct.getDisplayName());
 //            ImageView image = (ImageView) findViewById(R.id.profile_image);
             ImageView image = ViewsUtils.findView(this,R.id.profile_image);
             if (photoUrl!=null){
