@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         //tworzymy klienta Google
         //mowimy ze googleClient ma api do logowania
         googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this ,this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)        //mowimy ze googleClient ma api do logowania
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)        //mowimy ze googleClient ma api do logowania
                 .build();
 
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
@@ -88,10 +88,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             GoogleSignInAccount acct = result.getSignInAccount();
             Uri photoUrl = acct.getPhotoUrl();
             TextView name = ViewsUtils.findView(this, R.id.name_textview);
-            name.setText("Witaj " + acct.getDisplayName());
+            name.setText("Witaj " + acct.getDisplayName() + "! : )");
 //            ImageView image = (ImageView) findViewById(R.id.profile_image);
-            ImageView image = ViewsUtils.findView(this,R.id.profile_image);
-            if (photoUrl!=null){
+            ImageView image = ViewsUtils.findView(this, R.id.profile_image);
+            if (photoUrl != null) {
                 Glide.with(this).load(photoUrl).into(image);
             }
 
