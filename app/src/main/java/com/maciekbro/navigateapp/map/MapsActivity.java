@@ -14,20 +14,40 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.maciekbro.navigateapp.R;
+import com.maciekbro.navigateapp.SearchApplication;
+import com.maciekbro.navigateapp.dagger.SearchComponent;
+import com.maciekbro.navigateapp.map.dagger.DaggerMapsActivityComponent;
+import com.maciekbro.navigateapp.map.dagger.MapsActivityModule;
+import com.maciekbro.navigateapp.map.mvp.MapsMVP;
+import com.maciekbro.navigateapp.model.dto.PlacesDto;
+import com.maciekbro.navigateapp.model.dto.SearchParamsDto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import javax.inject.Inject;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, MapsMVP.View {
 
     private GoogleMap mMap;
     private Marker groszekMarker;
     private List<Marker> markers;
     private LatLngBounds.Builder builder;
 
+    @Inject
+    MapsMVP.Presenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SearchComponent searchComponent = ((SearchApplication)getApplication()).getSearchComponent();
+        DaggerMapsActivityComponent.builder()
+                .searchComponent(searchComponent)
+                .mapsActivityModule(new MapsActivityModule(this))
+                .build().inject(this);
+
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -36,6 +56,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mapFragment.setRetainInstance(true);    // do zachowywania stanu!!!!!!!
 
+        setButtonsListener();
+    }
+
+    private void setButtonsListener() {
         findViewById(R.id.delete_markers).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,16 +93,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -97,5 +111,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        HashMap<String,String> querys = new HashMap<>();
+        querys.put("query","Centrum konferencyjne kopernik")
+        presenter.search(new SearchParamsDto("textSearch",querys));
+
+    }
+
+    @Override
+    public void showPlaces(List<PlacesDto> placesDtos) {
+        if (placesDtos.size()>0){
+            mMap.addMarker(new MarkerOptions()
+            .position(placesDtos.get(0).getLatLng())
+            .title(placesDtos.get(0).getTitle()));
+
+        }
     }
 }

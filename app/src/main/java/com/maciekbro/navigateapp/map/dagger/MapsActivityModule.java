@@ -5,6 +5,7 @@ import com.maciekbro.navigateapp.SearchApplication;
 import com.maciekbro.navigateapp.dagger.scopes.ActivityScope;
 import com.maciekbro.navigateapp.map.mvp.MapsMVP;
 import com.maciekbro.navigateapp.map.mvp.MapsModel;
+import com.maciekbro.navigateapp.map.mvp.MapsPresenter;
 import com.maciekbro.navigateapp.network.GoogleRetrofitProvider;
 import com.maciekbro.navigateapp.network.api.GooglePlacesApi;
 
@@ -19,6 +20,12 @@ import retrofit2.Retrofit;
 @Module
 public class MapsActivityModule {
 
+    MapsMVP.View view;
+
+    public MapsActivityModule(MapsMVP.View view) {
+        this.view = view;
+    }
+
     @ActivityScope
     @Provides
         //bo w komponencie od ktorego jest zalezny ten modul to jest zwracane na zewnątrz
@@ -29,5 +36,11 @@ public class MapsActivityModule {
         String apiKey = searchApplication.getString(R.string.google_places_key);
 
         return new MapsModel(api, apiKey);
+    }
+
+    @ActivityScope
+    @Provides
+    MapsMVP.Presenter providePresenter(MapsMVP.Model model) {
+        return new MapsPresenter(view, model);
     }
 }
