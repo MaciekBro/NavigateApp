@@ -33,7 +33,7 @@ public class MapsModel implements MapsMVP.Model {
 
     @Override
     public Observable<List<PlacesDto>> getPlacesDto(SearchParamsDto searchParamsDto) {
-        
+
         querys = searchParamsDto.getQuerys();
         //dodaliśmy wartość klucza do zapytania, bo jest wymagane przez API!!!!
         querys.put(KEY,apiKey);

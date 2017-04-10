@@ -23,6 +23,7 @@ public interface MapsMVP {   //zeby bylo wiadomo ze to jest prezenter do map
 
 //        void search(String searchType, Map<String,String> querys);
         void search(SearchParamsDto searchParamsDto);   //jak cos sie zmieni to zmienimy tylko klasę!
+        void clearSubscriptions();
     }
     interface View{
         void showPlaces(List<PlacesDto> placesDtos);
