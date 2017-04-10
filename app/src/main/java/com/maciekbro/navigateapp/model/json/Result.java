@@ -140,4 +140,11 @@ public class Result {
         this.vicinity = vicinity;
     }
 
+    public double getLatitude(){
+        return this.getGeometry().getLocation().getLat();
+    }
+    public double getLong(){
+        return this.getGeometry().getLocation().getLng();
+    }
+
 }
