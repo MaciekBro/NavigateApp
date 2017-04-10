@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.maciekbro.navigateapp.SearchApplication;
+import com.maciekbro.navigateapp.network.GoogleRetrofitProvider;
 
 import javax.inject.Singleton;
 
@@ -25,8 +26,6 @@ public class MainAppModule {
         this.application = application;
     }
 
-
-
     /**
      *Dostarczamy context aplikacji wszystkim którzy jej potrzebują
      */
@@ -43,4 +42,11 @@ public class MainAppModule {
     SharedPreferences providesSharedPreferences(){
         return this.application.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE);
     }
+
+    @Provides
+    @Singleton
+    GoogleRetrofitProvider provideGoogleRetrofitProvider() {    //tworzy retrofita z baseUrl jak poniżej!
+        return new GoogleRetrofitProvider("https://maps.googleapis.com/maps/");
+    }
+
 }

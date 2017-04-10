@@ -9,9 +9,15 @@ buildscript {
     ext.logginInterceptor  =  "3.2.0"
     ext.gsonConverterVersion = '2.0.2'
     ext.rxadapter = '2.0.2'
+    ext.retrofit_version = '2.2.0'
+    ext.loggin_interceptor = "3.2.0"
+    ext.rx_java = '2.0.1'
+    ext.rx_android = '2.0.1'
+    ext.rx_bondings = "2.0.0"
 
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'

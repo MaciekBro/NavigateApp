@@ -5,7 +5,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.softwareacademy.searchandnavigate"
+        applicationId "com.maciekbro.navigateapp"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
@@ -35,14 +35,23 @@ dependencies {
 
     annotationProcessor "com.google.dagger:dagger-compiler:${daggerVersion}"
     compile "com.google.dagger:dagger:${daggerVersion}"
-    compile "com.google.code.gson:gson:2.8.0"
     compile "com.google.android.gms:play-services-auth:$google_play_services"
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 
-
+    compile "com.google.android.gms:play-services-maps:$google_play_services"
+    compile 'com.android.support:appcompat-v7:25.3.0'
     testCompile 'junit:junit:4.12'
+
+    compile "io.reactivex.rxjava2:rxjava:$rx_java"
+    compile "io.reactivex.rxjava2:rxandroid:$rx_android"
+    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rx_bondings"
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    compile "com.squareup.okhttp3:logging-interceptor:$loggin_interceptor"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
 }

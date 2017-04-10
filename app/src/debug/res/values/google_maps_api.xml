@@ -1,0 +1,25 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=E1:BD:D8:AD:BB:0E:D6:75:0B:1A:9A:79:A5:23:31:4F:77:43:96:B9%3Bcom.maciekbro.navigateapp.map
+
+    You can also add your credentials to an existing key, using this line:
+    E1:BD:D8:AD:BB:0E:D6:75:0B:1A:9A:79:A5:23:31:4F:77:43:96:B9;com.maciekbro.navigateapp.map
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDhMEOa6v4JR8SYQxR3WnKdGFDM56hYarM
+    </string>
+
+    <string name="google_places_key" translatable="false">
+        AIzaSyC_wltzgMHC6qhY_-yCJh43GFwoTe8aUjI
+    </string>
+</resources>
