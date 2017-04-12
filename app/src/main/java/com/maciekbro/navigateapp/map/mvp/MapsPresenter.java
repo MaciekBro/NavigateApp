@@ -32,7 +32,7 @@ public class MapsPresenter implements MapsMVP.Presenter {
 //placesDtos sa prekazywane przez searchParamsDto
 //to jest nasz error
         disposable = model.getPlacesDto(searchParamsDto)
-                .subscribeOn(Schedulers.computation())  //  /\ wysylamy proces do innego wątku, wszystko co jest nad tym bedzie na wskazanym wątku!
+                .subscribeOn(Schedulers.newThread())  //  /\ wysylamy proces do innego wątku, wszystko co jest nad tym bedzie na wskazanym wątku!
                 .observeOn(AndroidSchedulers.mainThread()) //powrót na główny wątek
                 .subscribe(new Consumer<List<PlacesDto>>() {
                     @Override

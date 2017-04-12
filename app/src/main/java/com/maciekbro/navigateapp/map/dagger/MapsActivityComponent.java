@@ -17,11 +17,13 @@ import dagger.Component;
 
 //MapsComponent "dziedziczy" po SearchComponencie, czyli moze wstrzykiwać to co wstrzykuje SearchComponent
 //też moze wstrzykiwać to co daje mu MapsActivityModule
+//dependencies uzywamy kiedy jeden component zalezy od drugiego (ala module), z SearchComponent dostajemy zależności tutaj
 @Component(dependencies = SearchComponent.class, modules = MapsActivityModule.class)
 //do wstrzykiwania czegos do map
 
 public interface MapsActivityComponent {
 
+    //w argumencie wskazujemy gdzie bedziemy wstrzykiwać zależności!!!!!!!!!
     void inject(MapsActivity mapsActivity);
 
 }

@@ -5,32 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_margin="5dp"
+    <com.maciekbro.navigateapp.views.SearchQueryView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:orientation="horizontal">
-
-
-        <Button
-            android:padding="5dp"
-            android:id="@+id/delete_markers"
-            android:layout_weight="0.5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Delete all markers" />
-
-        <Button
-            android:padding="5dp"
-            android:layout_gravity="right"
-            android:id="@+id/show_markers"
-            android:layout_weight="0.5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Show Markers" />
-
-    </LinearLayout>
+        android:id="@+id/search_widget">
+    </com.maciekbro.navigateapp.views.SearchQueryView>
 
     <fragment
         android:id="@+id/map"
@@ -38,4 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.maciekbro.navigateapp.map.MapsActivity" />
+
+
+
+
 </LinearLayout>
