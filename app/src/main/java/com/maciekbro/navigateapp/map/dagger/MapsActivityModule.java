@@ -41,6 +41,7 @@ public class MapsActivityModule {
     @ActivityScope
     @Provides
     MapsMVP.Presenter providePresenter(MapsMVP.Model model) {
+        //to co podajemy w argumencie dostajemy z
         return new MapsPresenter(view, model);
     }
 }
